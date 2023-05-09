@@ -30,8 +30,11 @@ contract UniswapV2Twap {
         token 1 = _pair.token1();
         price0CumulativeLast = _pair.price0CumulativeLast();
         price1CumulativeLast = _pair.price1CumulativeLast();
-        () = _pair.getReserves();
+        (,,blockTimestampLast) = _pair.getReserves();
     }
 
+    function update()  returns () {
+        
+    }
 
 }
