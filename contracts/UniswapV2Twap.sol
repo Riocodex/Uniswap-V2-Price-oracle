@@ -67,7 +67,9 @@ contract UniswapV2Twap {
     {
         require(token == token0 || token == token1, "invalid token");
         if(token == token0){
-            //because price0average is a datatype of q112x112 we decode it
+             // NOTE: using FixedPoint for *
+            // NOTE: mul returns uq144x112
+            // NOTE: decode144 decodes uq144x112 to uint144
             amountOut = price0Average.mul(amountIn).decode144(); 
         }else{
             amountOut = price1Average.mul(amountIn).decode144();
