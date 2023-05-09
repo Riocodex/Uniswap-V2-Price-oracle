@@ -24,5 +24,9 @@ contract UniswapV2Twap {
     FixedPoint.uq112x112 public price0Average;
     FixedPoint.uq112x112 public price1Average;
 
+    constructor(IUniswapV2Pair _pair) public {
+        pair = _pair;
+    }
+
 
 }
