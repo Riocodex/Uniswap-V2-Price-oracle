@@ -33,10 +33,18 @@ contract UniswapV2Twap {
         (,,blockTimestampLast) = _pair.getReserves();
     }
 
+
+    //this function will update the price0average and price1average
     function update()  returns () {
-        
+        (
+            uint price0Cumulative,
+            uint price1Cumulative,
+            uint32 blockTimestamp
+
+        ) = UniswapV2OracleLibrary.currentCumulativePrices(adress(pair))
     }
 
+    //after user puts in token and amount in this function will calculate amount out using either prrice0average or price1average
     function consult(address token, uint amountIn)
     external 
     view
