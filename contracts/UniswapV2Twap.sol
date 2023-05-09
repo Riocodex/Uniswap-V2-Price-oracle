@@ -35,6 +35,7 @@ contract UniswapV2Twap {
 
 
     //this function will update the price0average and price1average
+    //call the function once , wait for a minimum of PERIOD which is elapsed time, call it again and it will compute the two time weighted average prices
     function update()  returns () {
         (
             uint price0Cumulative,
