@@ -26,6 +26,9 @@ contract UniswapV2Twap {
 
     constructor(IUniswapV2Pair _pair) public {
         pair = _pair;
+        token 0 = _pair.token0();
+        token 1 = _pair.token1();
+
     }
 
 
