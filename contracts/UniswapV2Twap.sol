@@ -43,7 +43,14 @@ contract UniswapV2Twap {
 
         ) = UniswapV2OracleLibrary.currentCumulativePrices(address(pair));
         uint timeElapsed = blockTimestamp - blockTimestampLast;
-        require(timeElapsed >= PERIOD, "time elapsed < min period")
+        require(timeElapsed >= PERIOD, "time elapsed < min period");
+
+        //uq112 x 112 is a struct and thee input for the struct is uint224 so we rapped the formula for the price)average with uint224
+        price0Average = FixedPoint.uq112x112(uint224(
+            price0Cumulative - price0CumulativeLast) / timeElapsed);
+
+        price1Average = FixedPoint.uq112x112(
+            uint224(price1Cumulative - price1CumulativeLast) / timeElapsed);
     }
 
     //after user puts in token and amount in this function will calculate amount out using either prrice0average or price1average
