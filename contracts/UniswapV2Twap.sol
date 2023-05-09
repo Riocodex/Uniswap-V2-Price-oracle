@@ -51,6 +51,11 @@ contract UniswapV2Twap {
 
         price1Average = FixedPoint.uq112x112(
             uint224(price1Cumulative - price1CumulativeLast) / timeElapsed);
+
+        price0CumulativeLast = price0Cumulative;
+        price1CumulativeLast = price1Cumulative;
+        blockTimestampLast = blockTimestamp;
+        
     }
 
     //after user puts in token and amount in this function will calculate amount out using either prrice0average or price1average
