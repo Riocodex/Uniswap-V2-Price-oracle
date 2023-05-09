@@ -37,4 +37,10 @@ contract UniswapV2Twap {
         
     }
 
+    function consult(address token, uint amountIn)
+    external 
+    view
+    returns(uint amountOut)
+    {}
+
 }
