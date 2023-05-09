@@ -41,7 +41,8 @@ contract UniswapV2Twap {
             uint price1Cumulative,
             uint32 blockTimestamp
 
-        ) = UniswapV2OracleLibrary.currentCumulativePrices(adress(pair))
+        ) = UniswapV2OracleLibrary.currentCumulativePrices(address(pair));
+        uint timeElapsed = blockTimestamp - blockTimestampLast;
     }
 
     //after user puts in token and amount in this function will calculate amount out using either prrice0average or price1average
