@@ -19,6 +19,10 @@ contract UniswapV2Twap {
 
     uint public price0CumulativeLast;
     uint public price1CumulativeLast;
+    uint32 public blockTimestampLast;
+
+    FixedPoint.uq112x112 public price0Average;
+    FixedPoint.uq112x112 public price1Average;
 
 
 }
