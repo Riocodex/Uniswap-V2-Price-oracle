@@ -43,6 +43,7 @@ contract UniswapV2Twap {
 
         ) = UniswapV2OracleLibrary.currentCumulativePrices(address(pair));
         uint timeElapsed = blockTimestamp - blockTimestampLast;
+        require(timeElapsed >= PERIOD, "time elapsed < min period")
     }
 
     //after user puts in token and amount in this function will calculate amount out using either prrice0average or price1average
