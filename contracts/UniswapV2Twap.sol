@@ -18,7 +18,7 @@ contract UniswapV2Twap {
 
     uint public price0CumulativeLast;
     uint public price1CumulativeLast;
-    uint32 public blockTmestampLast;
+    uint32 public blockTimestampLast;
 
     // NOTE: binary fixed point numbers
     // range: [0, 2**112 - 1]
