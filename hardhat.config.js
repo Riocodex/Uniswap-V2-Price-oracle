@@ -1,23 +1,24 @@
-require("@nomiclabs/hardhat-waffle");
-require("@nomiclabs/hardhat-etherscan");
-const fs = require("fs");
+require("@nomicfoundation/hardhat-toolbox");
+require("dotenv").config();
 
-let PRIVATE_KEY = "";
-try {
-  PRIVATE_KEY = fs.readFileSync(".secret").toString();
-} catch (error) {}
-
+/** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
-  solidity: {
-    version: "0.6.6",
-    settings: {
-      optimizer: {
-        enabled: true,
-        runs: 200,
-      },
+  solidity: "0.8.17",
+  networks: {
+    mumbai:{
+      url: process.env.TESTNET_RPC_KEY,
+      accounts:[process.env.PRIVATE_KEY]
     },
+    goerli: {
+      url: process.env.TESTNET_RPC_KEY,
+      accounts: [process.env.PRIVATE_KEY]
+    },
+    sepolia: {
+      url: process.env.INFURA_SEPOLIA_ENDPOINT ,
+      accounts: [process.env.PRIVATE_KEY]
+    }
   },
-  etherscan: {
-    apiKey: process.env.ETHERSCAN_API_KEY,
-  },
+  etherscan:{
+    apiKey:process.env.POLYGONSCAN_API_KEY
+  }
 };
