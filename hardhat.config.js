@@ -3,7 +3,7 @@ require("dotenv").config();
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
-  solidity: "0.8.17",
+  solidity: "0.6.6",
   networks: {
     mumbai:{
       url: process.env.TESTNET_RPC_KEY,

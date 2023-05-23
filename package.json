@@ -19,8 +19,10 @@
     "hardhat": "^2.9.1"
   },
   "dependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^2.0.2",
     "@uniswap/v2-core": "^1.0.1",
     "@uniswap/v2-periphery": "^1.1.0-beta.0",
+    "dotenv": "^16.0.3",
     "prettier": "^2.5.1",
     "prettier-plugin-solidity": "^1.0.0-beta.19"
   }
