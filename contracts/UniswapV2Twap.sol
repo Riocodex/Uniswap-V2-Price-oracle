@@ -7,7 +7,7 @@ import "@uniswap/lib/contracts/libraries/FixedPoint.sol";
 import "@uniswap/v2-periphery/contracts/libraries/UniswapV2OracleLibrary.sol";
 import "@uniswap/v2-periphery/contracts/libraries/UniswapV2Library.sol";
 
-contract UniswapV2Twap {
+contract UniswapV2Twap{
     using FixedPoint for *;
 
     uint public constant PERIOD = 10;
